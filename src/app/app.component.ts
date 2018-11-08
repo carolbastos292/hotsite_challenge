@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import 'material-icons/iconfont/material-icons.scss';
+declare var jQuery: any;
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ocean-challenge';
+  title = 'Ocean Challenge';
 }

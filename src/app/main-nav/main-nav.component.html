@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav-container mat-elevation-z6">
+  <mat-sidenav
+          #drawer
+          class="sidenav"
+          [ngClass]="{hidden : !(isHandset$ | async)}"
+          fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#about" title="Sobre o Evento">Sobre o Evento</a>
+      <a mat-list-item href="#timeline" title="Timeline">Timeline</a>
+      <a mat-list-item href="#informations" title="Data e Local">Data e Local</a>
+      <a mat-list-item href="#subscription" title="Inscrição">Inscrição</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button class="N/A transparent"
+        style="color: #0050A1;"
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+        <div class="divImgNav">
+          <img class="responsive-img" id="imgNav" src="../../assets/img/uea-ocean-samsung-COLORIDAS.png">
+        </div>
+      <span class="spacer"></span>
+      <a  href="#about" title="Sobre o Evento">Sobre o Evento</a>
+      <a  href="#timeline" title="Timeline">Timeline</a>
+      <a  href="#informations" title="Data e Local">Data e Local</a>
+      <a  href="#subscription" title="Inscrição">Inscrição</a>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,1 +1,109 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ocean-challenge-primary: mat-palette($mat-indigo);
+$ocean-challenge-accent: mat-palette($mat-pink, A200, A100, A400);
+
+@font-face {
+  font-family: SamsungImaginationBold;
+  src: url(assets/fonts/SamsungImaginationBold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: SamsungSans-Regular;
+  src: url(assets/fonts/SamsungSans-Regular.ttf) format("opentype");
+}
+
+html,
+body {
+  height: 100%;
+  color: #0050A1;
+}
+
+body {
+  margin: 0;
+  color: #0050A1;
+
+}
+
+.block{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.title{
+  font-size: 3rem;
+  font-family: 'SamsungImaginationBold', 'arial', sans-serif;
+}
+
+#textEvent{
+  font-size: 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: 'SamsungSans-Regular', 'arial', sans-serif;
+}
+
+.informations{
+  font-family: 'SamsungSans-Regular', 'arial', sans-serif;
+}
+
+.textInfo{
+  padding-left: 30px;
+}
+
+.boxInfo .icon{
+  position: absolute;
+  padding-right: 10px;
+  width: 35px;
+}
+
+.address{
+  margin-left: 7%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.map-responsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+  margin-top: 20px;
+  box-shadow: 10px 5px 1px #e3e2e6;
+}
+.map-responsive iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
+@media (max-width: 961px){
+  .title{
+    font-size: 2rem;
+  }
+  #textEvent{
+    font-size: 1.2rem;
+  }
+  .address{
+    margin-left: 12%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+
+
+
+
+
